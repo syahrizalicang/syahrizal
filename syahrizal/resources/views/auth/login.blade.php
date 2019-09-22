@@ -26,6 +26,15 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="contact" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact" autofocus>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -38,6 +47,25 @@
                                 @enderror
                             </div>
                         </div>
+                          <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">Captcha</label>
+
+                            <div class="col-md-6">
+                                <div class="captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <br>
+                                    <br>
+                                    <button type="button" class="btn btn-success btn-refresh">Refresh</button>
+                                </div>
+                                <input type="text" id="captcha" class="form-control" placeholder="Enter Captcha" name="captcha">
+                                @if ($errors->has('captcha'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('captcha')}}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">

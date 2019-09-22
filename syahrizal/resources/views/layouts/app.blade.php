@@ -76,17 +76,8 @@
             @yield('content')
         </main>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-    $('.btn-refresh') .click(function) () {
-        $.ajax({
-        type: 'GET',
-        url: '{{ url ('/refresh_captcha') }}',
-        success: function (data) {
-            $('.captcha span').html(data);
-        }   
-        });
-    });
-</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"  
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+
 </body>
 </html>
